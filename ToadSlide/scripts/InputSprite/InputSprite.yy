@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"InputSprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"InputSprite",
+  "parent":{
+    "name":"Input",
+    "path":"folders/AfilTemplate/Scripts/AfilTemplate/Input.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_ambient_autumn",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":63.024,
+  "name":"snd_ambient_autumn",
+  "parent":{
+    "name":"Ambient",
+    "path":"folders/Sounds/Ambient.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_ambient_autumn.mp3",
+  "type":0,
+  "volume":1.0,
+}

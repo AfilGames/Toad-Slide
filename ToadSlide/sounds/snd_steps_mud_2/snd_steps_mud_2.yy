@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_steps_mud_2",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.081833,
+  "name":"snd_steps_mud_2",
+  "parent":{
+    "name":"Ambient",
+    "path":"folders/Sounds/Ambient.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_steps_mud_2.wav",
+  "type":0,
+  "volume":1.0,
+}

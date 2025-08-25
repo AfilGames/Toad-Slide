@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_tile_flecha",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.623729,
+  "name":"snd_tile_flecha",
+  "parent":{
+    "name":"Minos",
+    "path":"folders/Sounds/Ambient/Minos.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_tile_flecha.wav",
+  "type":0,
+  "volume":1.0,
+}

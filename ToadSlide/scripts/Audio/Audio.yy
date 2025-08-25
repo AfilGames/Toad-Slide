@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Audio",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Audio",
+  "parent":{
+    "name":"Managers",
+    "path":"folders/AfilTemplate/Scripts/AfilTemplate/Managers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

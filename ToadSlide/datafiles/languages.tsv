@@ -1,0 +1,44 @@
+key	pt	en	zh_Hans	zh_Hant	ja	de	fr
+language	Português	English	简体中文	簡體中文	日本語	Deutsch	Français
+splash_start	Pressione qualquer botão	Press Any Button	开始	開始	スタート	Start	Démarrer
+menu_play	Jogar	Play	游戏	遊戲	プレイ	Spielen	Jouer
+menu_options	Opções	Options	选项	選項	オプション	Optionen	Options
+menu_level_select	Seletor de Nível	Level Select	关卡选择	關卡選擇	レベル選択	Levelauswahl	Sélection de niveau
+menu_credits	Créditos	Credits	制作人员	製作人員	クレジット	Mitwirkende	Crédits
+menu_exit	Sair	Exit	退出	退出	終了	Beenden	Quitter
+menu_back	Voltar	Back	返回	返回	戻る	Zurück	Retour
+menu_paused	Pausado	Paused	暂停	暫停	一時停止	Pausiert	En pause
+options_volume_main	Volume Principal	Main Volume	主音量	主音量	マスターボリューム	Hauptlautstärke	Volume principal
+options_volume_music	Volume da Música	Music Volume	音乐音量	音樂音量	音楽音量	Musiklautstärke	Volume musique
+options_volume_sound	Volume de Sons	Sound Volume	音效音量	音效音量	効果音音量	Geräuschlautstärke	Volume des sons
+options_window_mode	Modo da Janela	Window Mode	窗口模式	視窗模式	ウィンドウモード	Fenstermodus	Mode fenêtré
+options_fullscreen	Tela Cheia	Fullscreen	全屏	全螢幕	フルスクリーン	Vollbild	Plein écran
+options_windowed	Janela	Windowed	窗口化	視窗化	ウィンドウ	Fenster	Fenêtré
+options_language	Idioma	Language	语言	語言	言語	Sprache	Langue
+ingame_level	Nível	Level	关卡	關卡	レベル	Level	Niveau
+ingame_punch	Socar	Punch	EMPTY	EMPTY	EMPTY	EMPTY	EMPTY
+ingame_restart	Reiniciar	Restart	重新开始	重新開始	リスタート	Neustart	Recommencer
+ingame_undo	Retroceder	Undo	撤销	撤銷	元に戻す	Rückgängig	Annuler
+ingame_paused	Pausar	Pause	EMPTY	EMPTY	EMPTY	EMPTY	EMPTY
+pause_resume	Continuar	Resume	继续	繼續	続ける	Fortsetzen	Reprendre
+pause_main_menu	Menu Principal	Main Menu	主菜单	主選單	メインメニュー	Hauptmenü	Menu principal
+credits_accelerate	Acelerar	Speed Up	Speed Up	Speed Up	Speed Up	Speed Up	Speed Up
+credits_title	Snack And Quack	Snack And Quack	Snack And Quack	Snack And Quack	Snack And Quack	Snack And Quack	Snack And Quack
+credits_studio	A Game By	A Game By	A Game By	A Game By	A Game By	A Game By	A Game By
+credits_director	Creative Director	Creative Director	Creative Director	Creative Director	Creative Director	Creative Director	Creative Director
+credits_producer	Producers	Producers	Producers	Producers	Producers	Producers	Producers
+credits_lead_producer	Lead Producer	Lead Producer	Lead Producer	Lead Producer	Lead Producer	Lead Producer	Lead Producer
+credits_game_designer	Game Designer	Game Designer	Game Designer	Game Designer	Game Designer	Game Designer	Game Designer
+credits_programmer	Programmer	Programmer	Programmer	Programmer	Programmer	Programmer	Programmer
+credits_pixel_artist	Pixel Artist	Pixel Artist	Pixel Artist	Pixel Artist	Pixel Artist	Pixel Artist	Pixel Artist
+credits_qa_test	QA	QA	QA	QA	QA	QA	QA
+credits_sound	Musician and Sound Designer	Musician and Sound Designer	Musician and Sound Designer	Musician and Sound Designer	Musician and Sound Designer	Musician and Sound Designer	Musician and Sound Designer
+credits_2d_artist	2D artist	2D artist	2D artist	2D artist	2D artist	2D artist	2D artist
+credits_marketing	Marketing	Marketing	Marketing	Marketing	Marketing	Marketing	Marketing
+credits_publisher_manager	Publisher Manager	Publisher Manager	Publisher Manager	Publisher Manager	Publisher Manager	Publisher Manager	Publisher Manager
+credits_marketing_manager	Marketing Manager	Marketing Manager	Marketing Manager	Marketing Manager	Marketing Manager	Marketing Manager	Marketing Manager
+credits_porting_producer	Porting Manager	Porting Manager	Porting Manager	Porting Manager	Porting Manager	Porting Manager	Porting Manager
+credits_porting	Porting	Porting	Porting	Porting	Porting	Porting	Porting
+Disconection_Title	Controle Desconectado	Controller Disconnected	EMPTY	EMPTY	EMPTY	EMPTY	EMPTY
+Disconection_Desc	Aperte qualquer botão \nou\nReconecte para Continuar	Press Any Button \nor\nReconnect to Continue	EMPTY	EMPTY	EMPTY	EMPTY	EMPTY
+Disconection_Desc_Console	Por favor reconecte \npara\n continuar	Please reconnect \nto\n continue	EMPTY	EMPTY	EMPTY	EMPTY	EMPTY

@@ -1,0 +1,1 @@
+draw_sprite_ext(spr_afil_logo, 0, width, height,0.7,0.7,0,c_white, currentAlphaTimer/maxAlphaTimer)

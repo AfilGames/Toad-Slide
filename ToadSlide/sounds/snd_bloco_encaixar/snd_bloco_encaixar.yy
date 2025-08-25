@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_bloco_encaixar",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.427646,
+  "name":"snd_bloco_encaixar",
+  "parent":{
+    "name":"Minos",
+    "path":"folders/Sounds/Ambient/Minos.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_bloco_encaixar.wav",
+  "type":0,
+  "volume":1.0,
+}

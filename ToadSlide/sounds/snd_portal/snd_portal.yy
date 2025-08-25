@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_portal",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.844479,
+  "name":"snd_portal",
+  "parent":{
+    "name":"Minos",
+    "path":"folders/Sounds/Ambient/Minos.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_portal.wav",
+  "type":0,
+  "volume":1.0,
+}

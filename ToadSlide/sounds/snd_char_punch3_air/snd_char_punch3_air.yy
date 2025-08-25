@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_char_punch3_air",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.342771,
+  "name":"snd_char_punch3_air",
+  "parent":{
+    "name":"Minos",
+    "path":"folders/Sounds/Ambient/Minos.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_char_punch3_air.wav",
+  "type":0,
+  "volume":1.0,
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_control_functions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_control_functions",
+  "parent":{
+    "name":"Scripts_Porting",
+    "path":"folders/Porting/Scripts_Porting.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

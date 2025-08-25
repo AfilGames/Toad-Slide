@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"InitialiseTesteAchievement",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"InitialiseTesteAchievement",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Porting/AchievementTest/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
