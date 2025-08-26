@@ -1,0 +1,57 @@
+{
+  "$GMObject":"",
+  "%Name":"obj_player",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
+  "managed":true,
+  "name":"obj_player",
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_grid_element","path":"objects/obj_grid_element/obj_grid_element.yy",},"propertyId":{"name":"move_interval","path":"objects/obj_grid_element/obj_grid_element.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"10",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_grid_element","path":"objects/obj_grid_element/obj_grid_element.yy",},"propertyId":{"name":"obstacles","path":"objects/obj_grid_element/obj_grid_element.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[obj_obstacle, obj_modifier_obstacle]",},
+  ],
+  "parent":{
+    "name":"LevelBuilding",
+    "path":"folders/Objects/LevelBuilding.yy",
+  },
+  "parentObjectId":{
+    "name":"obj_grid_element",
+    "path":"objects/obj_grid_element/obj_grid_element.yy",
+  },
+  "persistent":false,
+  "physicsAngularDamping":0.1,
+  "physicsDensity":0.5,
+  "physicsFriction":0.2,
+  "physicsGroup":1,
+  "physicsKinematic":false,
+  "physicsLinearDamping":0.1,
+  "physicsObject":false,
+  "physicsRestitution":0.1,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"interact_type","filters":[],"listItems":[
+        "\"dedicated_input\"",
+        "\"movement_push\"",
+      ],"multiselect":true,"name":"interact_type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"dedicated_input\"","varType":6,},
+    {"$GMObjectProperty":"v1","%Name":"interaction","filters":[],"listItems":[
+        "\"push\"",
+        "\"grab\"",
+      ],"multiselect":false,"name":"interaction","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"grab\"","varType":6,},
+  ],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "solid":false,
+  "spriteId":{
+    "name":"spr_player_idle_front",
+    "path":"sprites/spr_player_idle_front/spr_player_idle_front.yy",
+  },
+  "spriteMaskId":null,
+  "tags":[
+    "Level Creation",
+  ],
+  "visible":true,
+}
