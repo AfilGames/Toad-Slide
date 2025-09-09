@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_ui_confirm",
+  "audioGroupId":{
+    "name":"ag_sfx",
+    "path":"audiogroups/ag_sfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.614646,
+  "name":"snd_ui_confirm",
+  "parent":{
+    "name":"Ambient",
+    "path":"folders/Sounds/Ambient.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_ui_confirm.wav",
+  "type":0,
+  "volume":1.0,
+}

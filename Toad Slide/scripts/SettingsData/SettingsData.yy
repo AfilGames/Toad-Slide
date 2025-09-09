@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SettingsData",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SettingsData",
+  "parent":{
+    "name":"Data",
+    "path":"folders/AfilTemplate/Scripts/AfilTemplate/Data.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

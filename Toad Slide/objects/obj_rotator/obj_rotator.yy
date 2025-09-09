@@ -1,0 +1,47 @@
+{
+  "$GMObject":"",
+  "%Name":"obj_rotator",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
+  "managed":true,
+  "name":"obj_rotator",
+  "overriddenProperties":[],
+  "parent":{
+    "name":"Directional",
+    "path":"folders/Objects/LevelBuilding/Directional.yy",
+  },
+  "parentObjectId":{
+    "name":"obj_modifier",
+    "path":"objects/obj_modifier/obj_modifier.yy",
+  },
+  "persistent":false,
+  "physicsAngularDamping":0.1,
+  "physicsDensity":0.5,
+  "physicsFriction":0.2,
+  "physicsGroup":1,
+  "physicsKinematic":false,
+  "physicsLinearDamping":0.1,
+  "physicsObject":false,
+  "physicsRestitution":0.1,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "solid":false,
+  "spriteId":{
+    "name":"spr_rotator",
+    "path":"sprites/spr_rotator/spr_rotator.yy",
+  },
+  "spriteMaskId":{
+    "name":"spr_free_space",
+    "path":"sprites/spr_free_space/spr_free_space.yy",
+  },
+  "tags":[
+    "Level Creation",
+  ],
+  "visible":true,
+}

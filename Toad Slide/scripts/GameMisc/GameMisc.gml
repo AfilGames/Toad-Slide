@@ -1,0 +1,1 @@
+sprite_set_offset(spr_level_guides, -X_OFFSET, -Y_OFFSET);
