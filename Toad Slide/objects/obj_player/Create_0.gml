@@ -75,7 +75,7 @@ update_depth = function() {
 animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move_direction.y) {
 	var _spit_sprite = spr_player_spit_front;
 	if (_x != 0) {
-		_spit_sprite = spr_player_spit_site;
+		_spit_sprite = spr_player_spit_side;
 	}
 	else if (_y < 0) {
 		_spit_sprite = spr_player_spit_back;
@@ -132,9 +132,79 @@ animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move
 	grab_clock = 0;
 	grab_object = noone;
 	
+	eat_clock = 0;
+	
 	grab = function() {
 		if !instance_exists(grab_object) {
+			var _dx = grid_data.move_direction.x;
+			var _dy = grid_data.move_direction.y;
 		
+			var _length = 0;
+			
+			eat_clock = grab_time;
+		
+			while(_length <= grab_range) {
+				var _x = x + (_dx * _length * UNIT);
+				var _y = y + (_dy * _length * UNIT);
+		
+				var _pushable = noone;
+				var _pushables = ds_list_create();
+		
+				var _freespace = position_meeting(_x, _y, obj_free_space);
+			
+				instance_position_list(_x, _y, obj_pushable, _pushables, false);
+		
+				for (var i = 0; i < ds_list_size(_pushables); i++) {
+					var _element = _pushables[| i];
+			
+					if !_element.deactivated {
+						_pushable = _element;
+						break;
+					}
+				}
+			
+				if (instance_exists(_pushable)) {
+					tongue_target.x = _pushable.x - x;
+					tongue_target.y = _pushable.y - y;
+					break;
+				}
+				else {
+					tongue_target.x = _x - x;
+					tongue_target.y = _y - y;
+				
+					_length++;
+				}
+				if !_freespace break;
+			}
+		}
+		else {
+			var _valid = grab_object.grid_data.check_pushable_valid(grab_object.x, grab_object.y, grid_data.move_direction.x, grid_data.move_direction.y);
+			
+			if _valid {
+				grab_object.deactivated = false;
+				animate_interact();
+
+				audio_play_sfx_random([snd_char_punch_hit1_stone, snd_char_punch_hit2_stone, snd_char_punch_hit3_stone]);
+				
+				grab_object.action(id);
+				
+				grab_object = noone;
+			}
+		}
+	}
+	
+	interact = function() {};
+	
+	switch(interaction) {
+		case "push": interact = push break;
+		case "grab": interact = grab break;
+	}
+	
+	eat = function() {
+		tongue_target.x = 0;
+		tongue_target.y = 0;
+		
+		if !instance_exists(grab_object) {
 			var _dx = grid_data.move_direction.x;
 			var _dy = grid_data.move_direction.y;
 		
@@ -168,7 +238,7 @@ animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move
 						break;
 					}
 				}
-			
+				
 				if (instance_exists(_pushable)) {
 					var _target_x = x;
 					var _target_y = y;
@@ -176,6 +246,8 @@ animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move
 					if (instance_exists(_objective) and (_objective != _found_objective)) {
 						_target_x = _objective.x;
 						_target_y = _objective.y;
+						
+						call_later(2, time_source_units_frames, function() { obj_main.update_move() });
 					}
 					else {
 						rewind_save();
@@ -199,29 +271,8 @@ animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move
 				}
 			}
 		}
-		else {
-			var _valid = grab_object.grid_data.check_pushable_valid(grab_object.x, grab_object.y, grid_data.move_direction.x, grid_data.move_direction.y);
-			
-			if _valid {
-				grab_object.deactivated = false;
-				animate_interact();
-
-				audio_play_sfx_random([snd_char_punch_hit1_stone, snd_char_punch_hit2_stone, snd_char_punch_hit3_stone]);
-				
-				grab_object.action(id);
-				
-				grab_object = noone;
-			}
-		}
 	}
 	
-	interact = function() {};
-	
-	switch(interaction) {
-		case "push": interact = push break;
-		case "grab": interact = grab break;
-	}
-
 #endregion
 
 grid_data_reset = function() {
@@ -237,17 +288,34 @@ grid_data_reset = function() {
 arrow_dir = 0;
 arrow_anim = 0;
 
+tongue_target = new Vector2();
+tongue_pos = new Vector2();
+
 draw_element = function() {
 	
 	var _x = x + X_OFFSET;
 	var _y = y + Y_OFFSET;
-	draw_set_color(#ff0000);
-	draw_set_alpha(arrow_anim);
-	draw_arrow(_x, _y, _x + lengthdir_x(UNIT * .75, arrow_dir), _y + lengthdir_y(UNIT * .75, arrow_dir), 5);
-	draw_set_alpha(1);
-	draw_set_color(-1);
+	
+	draw_sprite_ext(spr_player_arrow_aim, sprite_get_animated_image_index(spr_player_arrow_aim), _x, _y, arrow_anim, arrow_anim, arrow_dir, #ffffff, arrow_anim);
 	
 	if dead gpu_set_fog(true, #ffffff, 0, 1);
+	
+	var _dir = point_direction(0, 0, grid_data.move_direction.x, grid_data.move_direction.y);
+	var _dist = point_distance(0, 0, tongue_pos.x, tongue_pos.y);
+	
+	var _side = grid_data.move_direction.x != 0;
+	
+	draw_sprite_ext(
+		spr_player_tongue,
+		0,
+		x + X_OFFSET + anim_linear_offset.x + anim_offset.x,
+		y + Y_OFFSET + anim_linear_offset.y + anim_offset.y + anim_height + _side * 4,
+		(_dist - 5) / sprite_get_width(spr_player_tongue),
+		1,
+		_dir + anim_tilt + anim_invalid * lengthdir_x(30, current_time * 3.3),
+		image_blend,
+		image_alpha * (1 - arrow_anim * .66)
+	)
 	
 	draw_sprite_ext(
 		sprite_index,

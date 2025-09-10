@@ -12,11 +12,11 @@ with (global.project_settings)
 {
 	game_version = ""; // "1.0.0.4";
 	save_version = "0.1";
-	game_title = string_letters(game_display_name);
+	game_title = "ToadSlide";
 	
 	// Save related
 	save_file_name = $"{game_title}";
-	save_folder_name = string_letters(game_display_name);
+	save_folder_name = "ToadSlide";
 	
 	menu_room = rm_main_menu;
 	

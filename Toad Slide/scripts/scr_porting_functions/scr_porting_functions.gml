@@ -12,7 +12,7 @@ function porting_init_var(){
 	//Configurações do jogo
 	global.isMsStore = IS_MS_STORE;//Marque em caso da build Windows ser MS Store
 	global.scid =  "00000000-0000-0000-0000-0000635a12c7";//scid da microsoft ms store
-	global.game_title = string_letters(game_display_name); // só aceita letras e numeros
+	global.game_title = "ToadSlide"; // só aceita letras e numeros
 	global.filename = string(global.game_title);//Nome do arq save (não usar .dat)
 	global.first_scene = rm_init;//Room inicial depois do Splash
 	

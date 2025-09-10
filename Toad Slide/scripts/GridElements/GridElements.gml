@@ -396,7 +396,7 @@ function ElementData(
 			static template_player_action_update = function() {																	///	@func template_player_action_update()
 				if !owner.continuous_movement {
 					var _input_dir = new Vector2(0, 0);
-					if (!is_transitioning() and (owner.grab_clock <= 0)) {
+					if (!is_transitioning() and (owner.grab_clock <= 0) and (owner.eat_clock < 0)) {
 						if !(obj_main.is_winning() or obj_main.is_dying()) {
 							_input_dir = input_check_movement();
 						}
