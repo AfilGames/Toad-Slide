@@ -73,18 +73,18 @@ update_depth = function() {
 }
 
 animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move_direction.y) {
-	var _kick_sprite = spr_player_kick_front;
+	var _spit_sprite = spr_player_spit_front;
 	if (_x != 0) {
-		_kick_sprite = spr_player_kick_site;
+		_spit_sprite = spr_player_spit_site;
 	}
 	else if (_y < 0) {
-		_kick_sprite = spr_player_kick_back;
+		_spit_sprite = spr_player_spit_back;
 	}
 	
 	anim_offset.x = grid_data.move_direction.x * 12;
 	anim_offset.y = grid_data.move_direction.y * 12;
 	
-	sprite_index = _kick_sprite;
+	sprite_index = _spit_sprite;
 	image_index = 0;
 }
 

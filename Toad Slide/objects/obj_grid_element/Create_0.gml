@@ -21,6 +21,10 @@ kill = function() {
 	
 }
 
+is_moving = function() {
+	return ((grid_data.move_direction.x != 0) or (grid_data.move_direction.y != 0)) and ((anim_linear_offset.x != 0) or (anim_linear_offset.y != 0))
+}
+
 rewind_function = function() {
 	
 }

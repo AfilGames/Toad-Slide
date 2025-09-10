@@ -50,16 +50,15 @@ animate_continuous = function(_x, _y) {
 	anim_linear_offset.y = _y;
 }
 
-var _down =	[spr_pushable_vfx_down_01, spr_pushable_vfx_down_02, spr_pushable_vfx_down_03	];
-var _up =	[spr_pushable_vfx_up_01, spr_pushable_vfx_up_02, spr_pushable_vfx_up_03			];
-var _side =	[spr_pushable_vfx_side_01, spr_pushable_vfx_side_02, spr_pushable_vfx_side_03	];
+var _down =	spr_pushable_vfx_down_01;
+var _up =	spr_pushable_vfx_up_01;
+var _side =	spr_pushable_vfx_side_01;
 
 vfx = {};
 with(vfx) {
-	var _biome = level_get_biome();
-	down = _down[_biome];
-	up = _up[_biome];
-	side = _side[_biome];
+	down = _down;
+	up = _up;
+	side = _side;
 }
 
 draw_element = function() {

@@ -15,7 +15,7 @@ grid_data.action_modify = function(_instance) {
 }
 
 update_depth = function() {
-	depth = -y + 1.5;
+	depth = -y + UNIT * 1.5;
 }
 
 update_depth();
