@@ -320,7 +320,7 @@ with (pause_menu)
 			node_set_position(GUI_WIDTH/2, GUI_HEIGHT * .17);
 			
 			// Tamanho base do botão
-			node_set_size(160, 96);
+			node_set_size(160 + 40, 96);
 			
 			// Adicionando sprite
 			node_add_sprite(spr_ui_level_select_banner);
@@ -328,8 +328,6 @@ with (pause_menu)
 			// Adicionando texto
 			node_add_text("menu_paused", "interface_14", #ffffff, true);
 	 
-			// Adicionando sprite
-			node_add_sprite(spr_ui_level_select_banner);
 	
 			node_sprite_set_scale(1, 1);
 		

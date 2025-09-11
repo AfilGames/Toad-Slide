@@ -81,9 +81,9 @@ function ui_create_option_menu() {
 				);
 			
 				// Tamanho base do botão
-				node_set_size(290, 54 * .9);
+				node_set_size(290, 41);
 				
-				node_set_scale(1, 1.1);
+				node_set_scale(1, 1);
 			
 				// Adicionando texto
 				node_add_text($"{language_get_localized_text("options_volume_main")}: {round(global.settings_data.audio.volume_main * 100)}", "interface_8", #ffffff, true);
@@ -163,9 +163,9 @@ function ui_create_option_menu() {
 				);
 			
 				// Tamanho base do botão
-				node_set_size(290, 54 * .9);
+				node_set_size(290, 41);
 				
-				node_set_scale(1, 1.1);
+				node_set_scale(1, 1);
 			
 				// Adicionando texto
 				node_add_text($"{language_get_localized_text("options_volume_music")}: {round(global.settings_data.audio.volume_music * 100)}", "interface_8", #ffffff, true);
@@ -246,9 +246,9 @@ function ui_create_option_menu() {
 				);
 			
 				// Tamanho base do botão
-				node_set_size(290, 54 * .9);
+				node_set_size(290, 41);
 				
-				node_set_scale(1, 1.1);
+				node_set_scale(1, 1);
 			
 				// Adicionando texto
 				node_add_text($"{language_get_localized_text("options_volume_sound")}: {round(global.settings_data.audio.volume_sfx * 100)}", "interface_8", #ffffff, true);
@@ -327,9 +327,9 @@ function ui_create_option_menu() {
 				);
 			
 				// Tamanho base do botão
-				node_set_size(290, 54 * .9);
+				node_set_size(290, 41);
 				
-				node_set_scale(1, 1.1);
+				node_set_scale(1, 1);
 			
 				// Adicionando texto
 				node_add_text($"{language_get_localized_text("options_language")}: {language_get_localized_text("language")}", "interface_8", #ffffff, true);
@@ -479,7 +479,7 @@ function ui_create_level_select() {
 			node_set_position(GUI_WIDTH/2, GUI_HEIGHT * .16);
 		
 			// Tamanho base do botão
-			node_set_size(230, 90);
+			node_set_size(230 + 40, 90);
 	
 			// Adicionando texto
 			node_add_text("menu_level_select", "interface_14", #ffffff, true);
