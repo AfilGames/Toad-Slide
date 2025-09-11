@@ -27,6 +27,21 @@ with (ingame_screen)
 				},
 				true
 			);
+			processor.add_process(
+				function(_node) {
+					if _node.node_active {
+						_node.node_text_set_colors(#000000);
+						//_node.text_scale.x = .5;
+						//_node.text_scale.y = .5;
+					}
+					else {
+						_node.node_text_set_colors(#ffffff);
+						//_node.text_scale.x = 1;
+						//_node.text_scale.y = 1;
+					}
+				},
+				true
+			);
 			
 			node_sprite_set_scale(1, 1);
 			
@@ -62,13 +77,40 @@ with (ingame_screen)
 		// Margem entre os botões do container
 		container_set_margin(8,2);
 		
-		var _punch = new node_button($"punch_button", false);
+		var _punch = new node_button($"punch_button", true);
 		with (_punch)
 		{	
+			add_component_processor();
+			processor.add_process(
+					function(_node) {
+						if (global.input_profile.mode != INPUT_MODE.MOUSE) {
+							self.navigator.selected = false;
+						}
+					},
+					true
+				);
+			processor.add_process(
+				function(_node) {
+					if _node.node_active {
+						_node.node_text_set_colors(#000000);
+						//_node.text_scale.x = .5;
+						//_node.text_scale.y = .5;
+					}
+					else {
+						_node.node_text_set_colors(#ffffff);
+						//_node.text_scale.x = 1;
+						//_node.text_scale.y = 1;
+					}
+				},
+				true
+			);
+			
+			navigator.block_directions(true, true, true, true);
+			
 			node_set_position(GUI_WIDTH - 50 - 22, GUI_HEIGHT - 24 - 22);
 		
 			// Tamanho base do botão
-			node_set_size(100, 42);
+			node_set_size(100, 36);
 			
 			sound_select = noone;
 			
@@ -79,7 +121,7 @@ with (ingame_screen)
 			node_add_sprite(spr_ui_ingame_indicator);
 			
 			// Adicionando sprite para quando o botão for selecionado
-			//node_sprite_set_hover(spr_ui_9slice_32_hover);
+			node_sprite_set_hover(spr_ui_ingame_indicator_selected);
 		
 			node_sprite_set_scale(1, 1);
 					
@@ -129,6 +171,21 @@ with (ingame_screen)
 					},
 					true
 				);
+				processor.add_process(
+					function(_node) {
+						if _node.node_active {
+							_node.node_text_set_colors(#000000);
+							//_node.text_scale.x = .5;
+							//_node.text_scale.y = .5;
+						}
+						else {
+							_node.node_text_set_colors(#ffffff);
+							//_node.text_scale.x = 1;
+							//_node.text_scale.y = 1;
+						}
+					},
+					true
+				);
 				
 				navigator.block_directions(true, true, true, true);
 				
@@ -137,7 +194,7 @@ with (ingame_screen)
 				sound_select = noone;
 				
 				// Tamanho base do botão
-				node_set_size(100, 42);
+				node_set_size(100, 36);
 			
 				// Adicionando texto
 				node_add_text("ingame_restart", "interface_10", #ffffff, true);
@@ -146,7 +203,7 @@ with (ingame_screen)
 				node_add_sprite(spr_ui_ingame_indicator);
 				
 				// Adicionando sprite para quando o botão for selecionado
-				//node_sprite_set_hover(spr_ui_9slice_32_hover);
+				node_sprite_set_hover(spr_ui_ingame_indicator_selected);
 			
 				node_sprite_set_scale(1, 1);
 						
@@ -196,6 +253,21 @@ with (ingame_screen)
 					},
 					true
 				);
+				processor.add_process(
+					function(_node) {
+						if _node.node_active {
+							_node.node_text_set_colors(#000000);
+							//_node.text_scale.x = .5;
+							//_node.text_scale.y = .5;
+						}
+						else {
+							_node.node_text_set_colors(#ffffff);
+							//_node.text_scale.x = 1;
+							//_node.text_scale.y = 1;
+						}
+					},
+					true
+				);
 				
 				navigator.block_directions(1, 1, 1, 1);
 				
@@ -204,7 +276,7 @@ with (ingame_screen)
 				sound_select = noone;
 				
 				// Tamanho base do botão
-				node_set_size(100, 42);
+				node_set_size(100, 36);
 			
 				// Adicionando texto
 				node_add_text("ingame_undo", "interface_10", #ffffff, true);
@@ -213,7 +285,7 @@ with (ingame_screen)
 				node_add_sprite(spr_ui_ingame_indicator);
 			
 				// Adicionando sprite para quando o botão for selecionado
-				//node_sprite_set_hover(spr_ui_9slice_32_hover);
+				node_sprite_set_hover(spr_ui_ingame_indicator_selected);
 			
 				node_sprite_set_scale(1, 1);
 						
@@ -316,6 +388,7 @@ with (pause_menu)
 		var _banner = new node_button($"pause_banner", false);
 		with (_banner)
 		{
+			
 			// Define a posição do container dentro do Canvas
 			node_set_position(GUI_WIDTH/2, GUI_HEIGHT * .17);
 			
@@ -326,7 +399,7 @@ with (pause_menu)
 			node_add_sprite(spr_ui_level_select_banner);
 			
 			// Adicionando texto
-			node_add_text("menu_paused", "interface_14", #ffffff, true);
+			node_add_text("menu_paused", "interface_14", #000000, true);
 	 
 	
 			node_sprite_set_scale(1, 1);
@@ -348,6 +421,23 @@ with (pause_menu)
 		var _resume = new node_button($"resume_button");
 		with (_resume)
 		{
+			add_component_processor()
+			processor.add_process(
+				function(_node) {
+					if _node.node_active {
+						_node.node_text_set_colors(#000000);
+						//_node.text_scale.x = .5;
+						//_node.text_scale.y = .5;
+					}
+					else {
+						_node.node_text_set_colors(#ffffff);
+						//_node.text_scale.x = 1;
+						//_node.text_scale.y = 1;
+					}
+				},
+				true
+			);
+			
 			// Tamanho base do botão
 			node_set_size(220,42);
 			node_set_scale(1, 1);
@@ -402,6 +492,23 @@ with (pause_menu)
 		var _options = new node_button($"options_button");
 		with (_options)
 		{
+			add_component_processor()
+			processor.add_process(
+				function(_node) {
+					if _node.node_active {
+						_node.node_text_set_colors(#000000);
+						//_node.text_scale.x = .5;
+						//_node.text_scale.y = .5;
+					}
+					else {
+						_node.node_text_set_colors(#ffffff);
+						//_node.text_scale.x = 1;
+						//_node.text_scale.y = 1;
+					}
+				},
+				true
+			);
+			
 			// Tamanho base do botão
 			node_set_size(220,42);
 			node_set_scale(1, 1);
@@ -452,6 +559,23 @@ with (pause_menu)
 		var _lvl_select = new node_button($"level_select_button");
 		with (_lvl_select)
 		{
+			add_component_processor()
+			processor.add_process(
+				function(_node) {
+					if _node.node_active {
+						_node.node_text_set_colors(#000000);
+						//_node.text_scale.x = .5;
+						//_node.text_scale.y = .5;
+					}
+					else {
+						_node.node_text_set_colors(#ffffff);
+						//_node.text_scale.x = 1;
+						//_node.text_scale.y = 1;
+					}
+				},
+				true
+			);
+			
 			// Tamanho base do botão
 			node_set_size(220,42);
 			node_set_scale(1, 1);
@@ -501,6 +625,23 @@ with (pause_menu)
 		var _backmenu = new node_button($"backmenu_button");
 		with (_backmenu)
 		{
+			add_component_processor()
+			processor.add_process(
+				function(_node) {
+					if _node.node_active {
+						_node.node_text_set_colors(#000000);
+						//_node.text_scale.x = .5;
+						//_node.text_scale.y = .5;
+					}
+					else {
+						_node.node_text_set_colors(#ffffff);
+						//_node.text_scale.x = 1;
+						//_node.text_scale.y = 1;
+					}
+				},
+				true
+			);
+			
 			// Tamanho base do botão
 			node_set_size(220,42);
 			node_set_scale(1, 1);

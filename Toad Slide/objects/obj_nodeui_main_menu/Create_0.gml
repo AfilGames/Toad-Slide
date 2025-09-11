@@ -74,6 +74,22 @@ with (title_screen)
 				},
 				false
 			);
+			processor.add_process(
+				function(_node) {
+					if _node.node_active {
+						_node.node_text_set_colors(#000000);
+						//_node.text_scale.x = .5;
+						//_node.text_scale.y = .5;
+					}
+					else {
+						_node.node_text_set_colors(#ffffff);
+						//_node.text_scale.x = 1;
+						//_node.text_scale.y = 1;
+					}
+				},
+				true
+			);
+			
 			// Tamanho base do botão
 			node_set_size(220,48);
 			
@@ -197,6 +213,23 @@ with (main_menu)
 		var _play = new node_button($"play_button");
 		with (_play)
 		{
+			add_component_processor();
+			processor.add_process(
+				function(_node) {
+					if _node.node_active {
+						_node.node_text_set_colors(#000000);
+						//_node.text_scale.x = .5;
+						//_node.text_scale.y = .5;
+					}
+					else {
+						_node.node_text_set_colors(#ffffff);
+						//_node.text_scale.x = 1;
+						//_node.text_scale.y = 1;
+					}
+				},
+				true
+			);
+			
 			// Tamanho base do botão
 			node_set_size(220,42);
 			node_set_scale(1, 1);
@@ -246,6 +279,22 @@ with (main_menu)
 		var _options = new node_button($"options_button");
 		with (_options)
 		{
+			add_component_processor();
+			processor.add_process(
+				function(_node) {
+					if _node.node_active {
+						_node.node_text_set_colors(#000000);
+						//_node.text_scale.x = .5;
+						//_node.text_scale.y = .5;
+					}
+					else {
+						_node.node_text_set_colors(#ffffff);
+						//_node.text_scale.x = 1;
+						//_node.text_scale.y = 1;
+					}
+				},
+				true
+			);
 
 			// Tamanho base do botão
 			node_set_size(220,42);
@@ -297,6 +346,23 @@ with (main_menu)
 		var _credits = new node_button($"credit_button");
 		with (_credits)
 		{
+			add_component_processor();
+			processor.add_process(
+				function(_node) {
+					if _node.node_active {
+						_node.node_text_set_colors(#000000);
+						//_node.text_scale.x = .5;
+						//_node.text_scale.y = .5;
+					}
+					else {
+						_node.node_text_set_colors(#ffffff);
+						//_node.text_scale.x = 1;
+						//_node.text_scale.y = 1;
+					}
+				},
+				true
+			);
+			
 			// Tamanho base do botão
 			node_set_size(220,42);
 			node_set_scale(1, 1);
@@ -347,6 +413,23 @@ with (main_menu)
 			var _exit = new node_button($"exit_button");
 			with (_exit)
 			{
+				add_component_processor();
+				processor.add_process(
+					function(_node) {
+						if _node.node_active {
+							_node.node_text_set_colors(#000000);
+							//_node.text_scale.x = .5;
+							//_node.text_scale.y = .5;
+						}
+						else {
+							_node.node_text_set_colors(#ffffff);
+							//_node.text_scale.x = 1;
+							//_node.text_scale.y = 1;
+						}
+					},
+					true
+				);
+			
 				// Tamanho base do botão
 				node_set_size(220,42);
 				node_set_scale(1, 1);
@@ -439,12 +522,28 @@ with (credits_menu)
 				true
 			);
 			
+			processor.add_process(
+				function(_node) {
+					if _node.node_active {
+						_node.node_text_set_colors(#000000);
+						//_node.text_scale.x = .5;
+						//_node.text_scale.y = .5;
+					}
+					else {
+						_node.node_text_set_colors(#ffffff);
+						//_node.text_scale.x = 1;
+						//_node.text_scale.y = 1;
+					}
+				},
+				true
+			);
+			
 			navigator.block_directions(true, true, true, true);
 			
 			node_set_position(GUI_WIDTH - 72, GUI_HEIGHT - 24);
 		
 			// Tamanho base do botão
-			node_set_size(130, 42);
+			node_set_size(130, 36);
 		
 			// Adicionando texto
 			node_add_text("credits_accelerate", "interface_8", #ffffff, true);
@@ -453,7 +552,7 @@ with (credits_menu)
 			node_add_sprite(spr_ui_ingame_indicator);
 			
 			// Adicionando sprite para quando o botão for selecionado
-			//node_sprite_set_hover(spr_ui_9slice_32_hover);
+			node_sprite_set_hover(spr_ui_ingame_indicator_selected);
 		
 			node_sprite_set_scale(1, 1);
 					
@@ -502,12 +601,28 @@ with (credits_menu)
 					true
 				);
 				
+				processor.add_process(
+					function(_node) {
+						if _node.node_active {
+							_node.node_text_set_colors(#000000);
+							//_node.text_scale.x = .5;
+							//_node.text_scale.y = .5;
+						}
+						else {
+							_node.node_text_set_colors(#ffffff);
+							//_node.text_scale.x = 1;
+							//_node.text_scale.y = 1;
+						}
+					},
+					true
+				);
+				
 				navigator.block_directions(true, true, true, true);
 				
 				node_set_position(GUI_WIDTH - 72, GUI_HEIGHT - 24);
 			
 				// Tamanho base do botão
-				node_set_size(130, 42);
+				node_set_size(130, 36);
 			
 				// Adicionando texto
 				node_add_text("pause_main_menu", "interface_8", #ffffff, true);
@@ -516,7 +631,7 @@ with (credits_menu)
 				node_add_sprite(spr_ui_ingame_indicator);
 				
 				// Adicionando sprite para quando o botão for selecionado
-				//node_sprite_set_hover(spr_ui_9slice_32_hover);
+				node_sprite_set_hover(spr_ui_ingame_indicator_selected);
 			
 				node_sprite_set_scale(1, 1);
 						

@@ -9,8 +9,8 @@ if (keyboard_check_pressed(vk_f4) and (fscreen_timer <= 0)) {
 
 if fullscreen_toggle_var {
 	global.settings_data.graphic.fullscreen = !FULLSCREEN;
-	call_later(18, time_source_units_frames, function() {
-		window_set_fullscreen(!FULLSCREEN);
+	window_set_fullscreen(!FULLSCREEN);
+	call_later(10, time_source_units_frames, function() {
 		obj_window_manager.update(FULLSCREEN);
 		window_center();
 	});

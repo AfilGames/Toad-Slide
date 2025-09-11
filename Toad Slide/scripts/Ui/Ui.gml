@@ -23,7 +23,7 @@ function ui_create_option_menu() {
 		var _button_container = new node_container_vertical("menu_buttons")
 		with (_button_container)
 		{
-		
+			
 			// Define a posição do container dentro do Canvas
 			node_set_position(GUI_WIDTH/2, GUI_HEIGHT * .5);
 		
@@ -34,10 +34,10 @@ function ui_create_option_menu() {
 			with (_banner)
 			{
 				// Tamanho base do botão
-				node_set_size(160, 96);
+				node_set_size(160 + 40, 96);
 			
 				// Adicionando texto
-				node_add_text("menu_options", "interface_14", #ffffff, true);
+				node_add_text("menu_options", "interface_14", #000000, true);
 			 
 				// Adicionando sprite
 				node_add_sprite(spr_ui_level_select_banner);
@@ -78,6 +78,21 @@ function ui_create_option_menu() {
 						}
 					},
 					false
+				);
+				processor.add_process(
+					function(_node) {
+						if _node.node_active {
+							_node.node_text_set_colors(#000000);
+							//_node.text_scale.x = .5;
+							//_node.text_scale.y = .5;
+						}
+						else {
+							_node.node_text_set_colors(#ffffff);
+							//_node.text_scale.x = 1;
+							//_node.text_scale.y = 1;
+						}
+					},
+					true
 				);
 			
 				// Tamanho base do botão
@@ -160,6 +175,21 @@ function ui_create_option_menu() {
 						}
 					},
 					false
+				);
+				processor.add_process(
+					function(_node) {
+						if _node.node_active {
+							_node.node_text_set_colors(#000000);
+							//_node.text_scale.x = .5;
+							//_node.text_scale.y = .5;
+						}
+						else {
+							_node.node_text_set_colors(#ffffff);
+							//_node.text_scale.x = 1;
+							//_node.text_scale.y = 1;
+						}
+					},
+					true
 				);
 			
 				// Tamanho base do botão
@@ -244,6 +274,21 @@ function ui_create_option_menu() {
 					},
 					false
 				);
+				processor.add_process(
+					function(_node) {
+						if _node.node_active {
+							_node.node_text_set_colors(#000000);
+							//_node.text_scale.x = .5;
+							//_node.text_scale.y = .5;
+						}
+						else {
+							_node.node_text_set_colors(#ffffff);
+							//_node.text_scale.x = 1;
+							//_node.text_scale.y = 1;
+						}
+					},
+					true
+				);
 			
 				// Tamanho base do botão
 				node_set_size(290, 41);
@@ -325,6 +370,21 @@ function ui_create_option_menu() {
 					},
 					false
 				);
+				processor.add_process(
+					function(_node) {
+						if _node.node_active {
+							_node.node_text_set_colors(#000000);
+							//_node.text_scale.x = .5;
+							//_node.text_scale.y = .5;
+						}
+						else {
+							_node.node_text_set_colors(#ffffff);
+							//_node.text_scale.x = 1;
+							//_node.text_scale.y = 1;
+						}
+					},
+					true
+				);
 			
 				// Tamanho base do botão
 				node_set_size(290, 41);
@@ -377,6 +437,23 @@ function ui_create_option_menu() {
 			var _back = new node_button($"back_button");
 			with (_back)
 			{
+				add_component_processor();
+				processor.add_process(
+					function(_node) {
+						if _node.node_active {
+							_node.node_text_set_colors(#000000);
+							//_node.text_scale.x = .5;
+							//_node.text_scale.y = .5;
+						}
+						else {
+							_node.node_text_set_colors(#ffffff);
+							//_node.text_scale.x = 1;
+							//_node.text_scale.y = 1;
+						}
+					},
+					true
+				);
+				
 				// Tamanho base do botão
 				node_set_size(200,48);
 				node_set_scale(1, .96);
@@ -482,7 +559,7 @@ function ui_create_level_select() {
 			node_set_size(230 + 40, 90);
 	
 			// Adicionando texto
-			node_add_text("menu_level_select", "interface_14", #ffffff, true);
+			node_add_text("menu_level_select", "interface_14", #000000, true);
 	 
 			// Adicionando sprite
 			node_add_sprite(spr_ui_level_select_banner);
@@ -546,13 +623,13 @@ function ui_create_level_select() {
 						function(_node) {
 							if _node.node_active {
 								_node.node_text_set_colors(#000000);
-								_node.text_scale.x = .5;
-								_node.text_scale.y = .5;
+								//_node.text_scale.x = .5;
+								//_node.text_scale.y = .5;
 							}
 							else {
 								_node.node_text_set_colors(#ffffff);
-								_node.text_scale.x = 1;
-								_node.text_scale.y = 1;
+								//_node.text_scale.x = 1;
+								//_node.text_scale.y = 1;
 							}
 						},
 						true
@@ -633,7 +710,7 @@ function ui_credit_title(_name, _text)
 		
 		node_add_sprite(spr_ui_credits);
 		node_sprite_set_scale(1.25, 1);
-		node_add_text(_text, "interface_12", #3C232C, true);				
+		node_add_text(_text, "interface_12", #000000, true);				
 	}	
 	
 	return _title;
@@ -654,7 +731,7 @@ function ui_credit_name(_name, _text)
 		var _scale_text = (_text_width / _spr_width);
 		
 		//node_sprite_set_scale(_scale_text, 1);
-		node_add_text(_text, "interface_12", #F4DFB2, true);				
+		node_add_text(_text, "interface_12", #ffffff, true);				
 	}	
 	
 	return _title;
@@ -738,14 +815,14 @@ function ui_draw_input_button(_node)
 		switch(_node.input_position)
 		{
 			case "bottom_left":
-				var _input_x = _transform.position.x - (sprite_get_width(_node.sprite) * .45) * (_transform.scale.x * _node.sprite_scale.x);
-				var _input_y = _transform.position.y + (sprite_get_height(_node.sprite) * .45) * (_transform.scale.y * _node.sprite_scale.y);
+				var _input_x = _transform.position.x - ((_node.transform.size.x) * .5) * (_transform.scale.x * _node.sprite_scale.x);
+				var _input_y = _transform.position.y + ((_node.transform.size.y) * .5) * (_transform.scale.y * _node.sprite_scale.y);
 			break;
 		
 			default:
 			case "top_left":
-				var _input_x = _transform.position.x - (sprite_get_width(_node.sprite) * .45) * (_transform.scale.x * _node.sprite_scale.x);
-				var _input_y = _transform.position.y - (sprite_get_height(_node.sprite) * .45) * (_transform.scale.y * _node.sprite_scale.y);
+				var _input_x = _transform.position.x - ((_node.transform.size.x) * .5) * (_transform.scale.x * _node.sprite_scale.x);
+				var _input_y = _transform.position.y - ((_node.transform.size.y) * .5) * (_transform.scale.y * _node.sprite_scale.y);
 			break;
 		}
 		

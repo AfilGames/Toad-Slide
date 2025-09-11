@@ -20,49 +20,34 @@ update = function(_force_fullscreen = false) {
 		global.camera_target_size.width = DEF_CAMERA_WIDTH;
 		global.camera_target_size.height = DEF_CAMERA_HEIGHT;
 		
-		//switch(global.camera_target_size.mode) {
-			
-		//	case DYNAMIC_VIEW.PRESERVE_WIDTH: {
-		//		var _scale = browser_width / DEF_CAMERA_WIDTH;
-		//		global.camera_target_size.height = browser_height / _scale;
-		//	} break;
-		//	case DYNAMIC_VIEW.PRESERVE_HEIGHT: {
-		//		var _scale = browser_height / DEF_CAMERA_HEIGHT;
-		//		global.camera_target_size.width = browser_width / _scale;
-		//	} break;
-		//}
 	}
 	else {
+		global.camera_target_size.width = DEF_CAMERA_WIDTH;
+		global.camera_target_size.height = DEF_CAMERA_HEIGHT;
+			
 		if !(FULLSCREEN || _force_fullscreen) {
 			window_set_size(DEF_CAMERA_WIDTH * global.settings_data.graphic.resolution, DEF_CAMERA_HEIGHT * global.settings_data.graphic.resolution);
-			global.camera_target_size.width = DEF_CAMERA_WIDTH;
-			global.camera_target_size.height = DEF_CAMERA_HEIGHT;
 		}
 		else {
-			if !FULLSCREEN window_set_size(DISPLAY_WIDTH, DISPLAY_HEIGHT);
-		
-			global.camera_target_size.width = DEF_CAMERA_WIDTH;
-			global.camera_target_size.height = DEF_CAMERA_HEIGHT;
-		
-			//switch(global.camera_target_size.mode) {
+			var _scale = DISPLAY_HEIGHT / DEF_CAMERA_HEIGHT;
+			var _width = DEF_CAMERA_WIDTH * _scale;
+			var _height = DISPLAY_HEIGHT;
 			
-			//	case DYNAMIC_VIEW.PRESERVE_WIDTH: {
-			//		var _scale = DISPLAY_WIDTH / DEF_CAMERA_WIDTH;
-			//		global.camera_target_size.height = DISPLAY_HEIGHT / _scale;
-			//	} break;
-			//	case DYNAMIC_VIEW.PRESERVE_HEIGHT: {
-			//		var _scale = DISPLAY_HEIGHT / DEF_CAMERA_HEIGHT;
-			//		global.camera_target_size.width = DISPLAY_WIDTH / _scale;
-			//	} break;
-			//}
+			window_set_size(_width, _height);
 		}
 	}
 	
-	var _scale = WINDOW_HEIGHT / DEF_CAMERA_HEIGHT;
+	var _scale = DISPLAY_HEIGHT / DEF_CAMERA_HEIGHT;
 	var _width = DEF_CAMERA_WIDTH * _scale;
+	var _height = DISPLAY_HEIGHT;
+	
+	if !FULLSCREEN {
+		_width = WINDOW_WIDTH;
+		_height = WINDOW_HEIGHT;
+	}
 	
 	view_set_wport(CURRENT_VIEWPORT, _width);
-	view_set_hport(CURRENT_VIEWPORT, WINDOW_HEIGHT);
+	view_set_hport(CURRENT_VIEWPORT, _height);
 	
 	var _sw = CAMERA_WIDTH;
 	var _sh = CAMERA_HEIGHT;
