@@ -68,14 +68,17 @@ if (!grid_data.check_moving_pushable() or move_while_pushable_moving) {
 			grid_data.move_direction.x = _input_dir.x;
 			grid_data.move_direction.y = _input_dir.y;
 		}
-		
-		last_dir = [grid_data.move_direction.x, grid_data.move_direction.y];
 	}
 }
 
-var _spit = (input_check_released("game_interact") and !(obj_main.is_winning() or obj_main.is_dying() or (grab_clock > 0) or (eat_clock >= 0)) and array_contains(interact_type, "dedicated_input") and (!grid_data.check_moving_pushable() or move_while_pushable_moving));
+var _game_state_free = !(obj_main.is_winning() or obj_main.is_dying());
+var _not_eating = !((grab_clock > 0) or (eat_clock >= 0));
+var _no_moving_pushables = (!grid_data.check_moving_pushable() or move_while_pushable_moving);
+var _dedicated_input = array_contains(interact_type, "dedicated_input");
+
+var _spit = (input_check_released("game_interact") and _game_state_free and _not_eating and _no_moving_pushables and _dedicated_input);
 if _spit {
-	interact();
+	interact();	
 }
 
 var _idle_sprite = spr_player_idle_front;
@@ -119,18 +122,16 @@ if !_tongue_out {
 		image_speed = 1;
 	}
 	
-	if ((instance_exists(grab_object) and !move_while_grab) or is_aiming()) {
+	if (sprite_index != _idle_sprite) {
+		sprite_index = _idle_sprite;
+		image_index = 0;
+		image_speed = 1;
+	}
 	
-		if is_aiming() {
-			sprite_index = _spit_sprite;
-			image_index = 1;
-			image_speed = 0;
-		}
-		else if (sprite_index != _idle_sprite) {
-			sprite_index = _idle_sprite;
-			image_index = 0;
-			image_speed = 1;
-		}
+	if ((instance_exists(grab_object) and !move_while_grab) or is_aiming()) {
+		sprite_index = _spit_sprite;
+		image_index = 1;
+		image_speed = 0;
 
 		if (grid_data.move_direction.x != 0) x_side = grid_data.move_direction.x;
 	}

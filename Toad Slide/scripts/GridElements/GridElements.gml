@@ -419,8 +419,6 @@ function ElementData(
 								move_direction.x = _input_dir.x;
 								move_direction.y = _input_dir.y;
 							}
-							
-							owner.last_dir = [move_direction.x, move_direction.y];
 						}
 						else {
 							owner.input_buffer.x = 0;
@@ -454,8 +452,7 @@ function ElementData(
 							move_direction.x = owner.input_buffer.x;
 							move_direction.y = owner.input_buffer.y;
 						}
-						
-						owner.last_dir = [move_direction.x, move_direction.y];
+		
 					}
 				}
 				owner.input_buffer.x = 0;

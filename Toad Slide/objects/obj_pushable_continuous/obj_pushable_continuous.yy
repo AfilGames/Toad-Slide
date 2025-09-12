@@ -38,7 +38,10 @@
     "name":"spr_pushable",
     "path":"sprites/spr_pushable/spr_pushable.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_free_space",
+    "path":"sprites/spr_free_space/spr_free_space.yy",
+  },
   "tags":[
     "Level Creation",
   ],

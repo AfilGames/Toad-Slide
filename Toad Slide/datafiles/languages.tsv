@@ -16,7 +16,7 @@ options_fullscreen	Tela Cheia	Fullscreen	全屏	全螢幕	フルスクリーン	
 options_windowed	Janela	Windowed	窗口化	視窗化	ウィンドウ	Fenster	Fenêtré
 options_language	Idioma	Language	语言	語言	言語	Sprache	Langue
 ingame_level	Nível	Level	关卡	關卡	レベル	Level	Niveau
-ingame_punch	Socar	Punch	EMPTY	EMPTY	EMPTY	EMPTY	EMPTY
+ingame_punch	Língua	Tongue	EMPTY	EMPTY	EMPTY	EMPTY	EMPTY
 ingame_restart	Reiniciar	Restart	重新开始	重新開始	リスタート	Neustart	Recommencer
 ingame_undo	Retroceder	Undo	撤销	撤銷	元に戻す	Rückgängig	Annuler
 ingame_paused	Pausar	Pause	EMPTY	EMPTY	EMPTY	EMPTY	EMPTY

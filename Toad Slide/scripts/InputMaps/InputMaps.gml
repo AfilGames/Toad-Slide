@@ -358,16 +358,14 @@ function build_default_input_map_gamepad()
 		if(os_type == os_ps4 && global.enter_button_assign == 0) || (os_type == os_switch){
 			set_input("act_select", gp_face2);
 			set_input("act_reset", gp_face1);
-			
-			set_input("game_interact", gp_face2);
-			set_input("game_rewind",gp_face1);
 		}else{
 			set_input("act_select", gp_face1);
 			set_input("act_reset", gp_face2);
-			
-			set_input("game_interact", gp_face1);
-			set_input("game_rewind",gp_face2);
 		}
+		
+		set_input("game_interact", gp_face1);
+		set_input("game_rewind",gp_face3);
+		
 		#endregion
 	}
 	return variable_clone(_map.button_map);

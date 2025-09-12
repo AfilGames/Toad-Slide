@@ -20,7 +20,7 @@ last_dir = [1, 0];
 
 rewind_function = function() {
 	grid_data.move_direction.x = last_dir[0];
-	grid_data.move_direction.y = last_dir[1]; 
+	grid_data.move_direction.y = last_dir[1];
 }
 
 kill = function() {
@@ -28,7 +28,12 @@ kill = function() {
 }
 
 is_aiming = function() {
-	return can_aim and input_check("game_interact");
+	var _game_state_free = !(obj_main.is_winning() or obj_main.is_dying());
+	var _not_eating = !((grab_clock > 0) or (eat_clock >= 0));
+	var _no_moving_pushables = (!grid_data.check_moving_pushable() or move_while_pushable_moving);
+	var _dedicated_input = array_contains(interact_type, "dedicated_input");
+	
+	return can_aim and input_check("game_interact") and _game_state_free and _not_eating and _no_moving_pushables and _dedicated_input;
 }
 
 move_continuous = function() {
@@ -183,6 +188,8 @@ animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move
 			var _valid = grab_object.grid_data.check_pushable_valid(grab_object.x, grab_object.y, grid_data.move_direction.x, grid_data.move_direction.y);
 			
 			if _valid {
+				rewind_save();
+				last_dir = [grid_data.move_direction.x, grid_data.move_direction.y];
 				grab_object.deactivated = false;
 				animate_interact();
 
@@ -253,6 +260,7 @@ animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move
 					}
 					else {
 						rewind_save();
+						last_dir = [grid_data.move_direction.x, grid_data.move_direction.y];
 						grab_object = _pushable;
 						
 						audio_stop_sound(snd_ts_froaktongue);
@@ -265,7 +273,7 @@ animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move
 					_element.x = _target_x;
 					_element.y = _target_y;
 					
-					if !instance_exists(_objective) rewind_save();
+					//if !instance_exists(_objective) 
 				
 					break;
 				}
@@ -315,7 +323,7 @@ draw_element = function() {
 		0,
 		x + X_OFFSET + anim_linear_offset.x + anim_offset.x,
 		y + Y_OFFSET + anim_linear_offset.y + anim_offset.y + anim_height + _side * 4,
-		(_dist - 5) / sprite_get_width(spr_player_tongue),
+		(_dist + 8) / sprite_get_width(spr_player_tongue),
 		1,
 		_dir + anim_tilt + anim_invalid * lengthdir_x(30, current_time * 3.3),
 		image_blend,

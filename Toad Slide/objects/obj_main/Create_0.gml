@@ -78,7 +78,7 @@ check_objectives = function() {
 	}
 	if (_passed && (winner_clock <= 0) && !is_transitioning()) {
 		
-		winner_clock = 60;
+		winner_clock = 90;
 	}
 }
 

@@ -129,8 +129,6 @@
 				
 				update_depth();
 				
-				rewind_function();
-				
 				var _oldpos = variable_clone(grid_data.pos_source);
 				grid_data_reset();
 				
@@ -140,6 +138,8 @@
 				anim_offset.x = _oldpos.x;
 				anim_offset.y = _oldpos.y;
 				anim_invalid = .5;
+				
+				rewind_function();
 			}
 		}
 		
