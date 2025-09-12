@@ -12,8 +12,8 @@
   "duration":0.251917,
   "name":"snd_nut_push_1",
   "parent":{
-    "name":"Ambient",
-    "path":"folders/Sounds/Ambient.yy",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

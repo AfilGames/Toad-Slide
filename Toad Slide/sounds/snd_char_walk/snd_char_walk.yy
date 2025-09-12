@@ -9,11 +9,11 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.595792,
+  "duration":0.595805,
   "name":"snd_char_walk",
   "parent":{
     "name":"Minos",
-    "path":"folders/Sounds/Ambient/Minos.yy",
+    "path":"folders/Sounds/Minos.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

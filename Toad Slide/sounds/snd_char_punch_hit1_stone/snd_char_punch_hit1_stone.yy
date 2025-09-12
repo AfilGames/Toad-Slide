@@ -9,11 +9,11 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.449646,
+  "duration":0.44965985,
   "name":"snd_char_punch_hit1_stone",
   "parent":{
     "name":"Minos",
-    "path":"folders/Sounds/Ambient/Minos.yy",
+    "path":"folders/Sounds/Minos.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

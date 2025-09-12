@@ -12,8 +12,8 @@
   "duration":0.106458,
   "name":"snd_steps_mud_5",
   "parent":{
-    "name":"Ambient",
-    "path":"folders/Sounds/Ambient.yy",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -466,8 +466,6 @@ function ui_create_option_menu() {
 			
 				// Adicionando sprite para quando o botão for selecionado
 				node_sprite_set_hover(spr_ui_9slice_32_hover);
-			
-				sound_click = snd_ui_select;
 				
 				//node_sprite_set_scale(4, 1.2);
 						

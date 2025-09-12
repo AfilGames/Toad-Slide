@@ -12,8 +12,8 @@
   "duration":0.478292,
   "name":"snd_nut_on_objective",
   "parent":{
-    "name":"Ambient",
-    "path":"folders/Sounds/Ambient.yy",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

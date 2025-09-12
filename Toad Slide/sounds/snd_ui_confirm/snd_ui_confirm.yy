@@ -12,8 +12,8 @@
   "duration":0.19396825,
   "name":"snd_ui_confirm",
   "parent":{
-    "name":"Ambient",
-    "path":"folders/Sounds/Ambient.yy",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

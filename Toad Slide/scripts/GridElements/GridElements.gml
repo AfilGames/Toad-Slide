@@ -213,7 +213,7 @@ function ElementData(
 			static template_pushable_action_start = function() {																///	@func template_pushable_action_start()
 				timer = owner.move_interval;
 			
-				if !audio_is_playing(owner.slide_sound) owner.slide_sound = audio_play_sound(snd_bloco_arrastando_loop, false, true);
+				//if !audio_is_playing(owner.slide_sound) owner.slide_sound = audio_play_sound(snd_bloco_arrastando_loop, false, true);
 			
 				var _invalid_anim = false;
 				var _valid = true;
@@ -349,7 +349,7 @@ function ElementData(
 		
 					position_to_owner();
 		
-					audio_play_sfx(snd_char_walk);
+					audio_play_sfx_random([snd_steps_1, snd_steps_2, snd_steps_3])
 	
 					owner.update_depth();
 				}

@@ -7,6 +7,10 @@ function input_get_sprite(_input, _dir = 0, _mode = global.input_profile.mode)
 	
 	if (is_string(_input))
 	{
+		if (_mode == INPUT_MODE.MOUSE) {
+			_mode = INPUT_MODE.KEYBOARD;
+		}
+		
 		var _map = input_get_map(_mode);
 		_input_const = _map.get_input(_input);
 	
@@ -19,10 +23,7 @@ function input_get_sprite(_input, _dir = 0, _mode = global.input_profile.mode)
 		{
 			switch (_mode)
 			{
-				case INPUT_MODE.MOUSE:	
-				case INPUT_MODE.KEYBOARD: {
-					_sprite = __input_get_sprite_keyboard(_input_const);
-				} break;	
+				case INPUT_MODE.KEYBOARD:	_sprite = __input_get_sprite_keyboard(_input_const)		break;	
 				case INPUT_MODE.PS4:		_sprite = __input_get_sprite_ps4(_input_const, _dir)	break;	
 				case INPUT_MODE.PS5:		_sprite = __input_get_sprite_ps5(_input_const, _dir)	break;	
 				case INPUT_MODE.SWITCH:		_sprite = __input_get_sprite_switch(_input_const, _dir)	break;	

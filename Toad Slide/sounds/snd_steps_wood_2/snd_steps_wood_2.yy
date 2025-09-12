@@ -12,8 +12,8 @@
   "duration":0.202646,
   "name":"snd_steps_wood_2",
   "parent":{
-    "name":"Ambient",
-    "path":"folders/Sounds/Ambient.yy",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

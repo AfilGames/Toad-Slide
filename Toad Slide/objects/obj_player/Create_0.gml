@@ -142,7 +142,9 @@ animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move
 			var _length = 0;
 			
 			eat_clock = grab_time;
-		
+			
+			audio_play_sfx(snd_ts_froaktongue);
+			
 			while(_length <= grab_range) {
 				var _x = x + (_dx * _length * UNIT);
 				var _y = y + (_dy * _length * UNIT);
@@ -184,7 +186,7 @@ animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move
 				grab_object.deactivated = false;
 				animate_interact();
 
-				audio_play_sfx_random([snd_char_punch_hit1_stone, snd_char_punch_hit2_stone, snd_char_punch_hit3_stone]);
+				audio_play_sfx(snd_ts_froakspit);
 				
 				grab_object.action(id);
 				
@@ -252,6 +254,9 @@ animate_interact = function(_x = grid_data.move_direction.x, _y = grid_data.move
 					else {
 						rewind_save();
 						grab_object = _pushable;
+						
+						audio_stop_sound(snd_ts_froaktongue);
+						audio_play_sfx(snd_ts_playerswallow);
 					}
 					
 					grab_clock = grab_time;

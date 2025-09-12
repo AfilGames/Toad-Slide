@@ -15,7 +15,7 @@ anim_linear_offset.y = approach(anim_linear_offset.y, 0, UNIT / move_interval);
 
 var _tongue_out = ((abs(tongue_pos.x) > (UNIT / 2)) or (abs(tongue_pos.y) > (UNIT / 2)));
 
-anim_master_scale = lerp(anim_master_scale, 1 + (.5 * (instance_exists(grab_object) and !_tongue_out)), .15);
+anim_master_scale = lerp(anim_master_scale, 1 + (.25 * (instance_exists(grab_object) and !_tongue_out)), .15);
 
 if instance_exists(grab_object) {
 	grab_object.x = x;

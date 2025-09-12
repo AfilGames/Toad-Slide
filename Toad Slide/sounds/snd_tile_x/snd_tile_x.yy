@@ -13,7 +13,7 @@
   "name":"snd_tile_x",
   "parent":{
     "name":"Minos",
-    "path":"folders/Sounds/Ambient/Minos.yy",
+    "path":"folders/Sounds/Minos.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
