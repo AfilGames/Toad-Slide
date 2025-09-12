@@ -7,9 +7,9 @@
   },
   "bitDepth":1,
   "bitRate":128,
-  "compression":0,
+  "compression":1,
   "conversionMode":0,
-  "duration":61.032,
+  "duration":38.8078,
   "name":"snd_ambient_summer",
   "parent":{
     "name":"Ambient",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_ambient_summer.mp3",
-  "type":0,
+  "soundFile":"snd_ambient_summer.wav",
+  "type":1,
   "volume":1.0,
 }

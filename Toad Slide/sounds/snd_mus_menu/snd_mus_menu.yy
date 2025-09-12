@@ -7,9 +7,9 @@
   },
   "bitDepth":1,
   "bitRate":128,
-  "compression":0,
+  "compression":1,
   "conversionMode":0,
-  "duration":60.397354,
+  "duration":64.01,
   "name":"snd_mus_menu",
   "parent":{
     "name":"Music",
@@ -20,6 +20,6 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_mus_menu.wav",
-  "type":0,
+  "type":1,
   "volume":1.0,
 }

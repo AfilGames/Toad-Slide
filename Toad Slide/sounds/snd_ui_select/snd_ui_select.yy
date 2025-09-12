@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.49517006,
+  "duration":0.27038547,
   "name":"snd_ui_select",
   "parent":{
     "name":"Ambient",

@@ -7,9 +7,9 @@
   },
   "bitDepth":1,
   "bitRate":128,
-  "compression":0,
+  "compression":1,
   "conversionMode":0,
-  "duration":56.04,
+  "duration":62.07315,
   "name":"snd_ambient_spring",
   "parent":{
     "name":"Ambient",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_ambient_spring.mp3",
-  "type":0,
+  "soundFile":"snd_ambient_spring.wav",
+  "type":2,
   "volume":1.0,
 }

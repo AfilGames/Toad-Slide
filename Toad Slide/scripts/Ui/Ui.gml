@@ -96,7 +96,7 @@ function ui_create_option_menu() {
 				);
 			
 				// Tamanho base do botão
-				node_set_size(290, 41);
+				node_set_size(220, 41);
 				
 				node_set_scale(1, 1);
 			
@@ -193,7 +193,7 @@ function ui_create_option_menu() {
 				);
 			
 				// Tamanho base do botão
-				node_set_size(290, 41);
+				node_set_size(220, 41);
 				
 				node_set_scale(1, 1);
 			
@@ -291,7 +291,7 @@ function ui_create_option_menu() {
 				);
 			
 				// Tamanho base do botão
-				node_set_size(290, 41);
+				node_set_size(220, 41);
 				
 				node_set_scale(1, 1);
 			
@@ -387,7 +387,7 @@ function ui_create_option_menu() {
 				);
 			
 				// Tamanho base do botão
-				node_set_size(290, 41);
+				node_set_size(220, 41);
 				
 				node_set_scale(1, 1);
 			

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.274375,
+  "duration":0.27437642,
   "name":"snd_steps_1",
   "parent":{
     "name":"Ambient",

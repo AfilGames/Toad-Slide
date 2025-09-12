@@ -8,8 +8,10 @@ enum BIOME {
 	AUTUMN
 }
 
+#macro BIOME_LENGTH 15
+
 function level_get_biome(_level_index = global.level_index) {
-	return ((_level_index - 1) div 10)
+	return ((_level_index - 1) div BIOME_LENGTH)
 }
 
 //	Indexxing the levels
@@ -30,8 +32,6 @@ function level_get_room(_index) {
 function level_setup() {
 	obj_camera_manager.set(room_width * .5, room_height * .5);
 	instance_create_depth(0, 0, 0, obj_nodeui_ingame);
-	//instance_create_depth(0, 0, 0, obj_godrays);
-	//instance_create_depth(0, 0, 0, obj_falling);
 	
 	if audio_is_playing(snd_bloco_arrastando_loop) audio_stop_sound(snd_bloco_arrastando_loop);
 	

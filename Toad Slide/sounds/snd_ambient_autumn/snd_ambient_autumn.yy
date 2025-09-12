@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":63.024,
+  "duration":63.0,
   "name":"snd_ambient_autumn",
   "parent":{
     "name":"Ambient",
