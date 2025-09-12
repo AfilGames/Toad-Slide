@@ -18,7 +18,7 @@ with (ingame_screen)
 	var _level = new node_button($"level_button", false);
 	with (_level)
 		{	
-			node_set_position(16 + 64, 10 + 20);
+			node_set_position(16 + 64 + 10, 10 + 20);
 			
 			add_component_processor();
 			processor.add_process(
@@ -46,7 +46,7 @@ with (ingame_screen)
 			node_sprite_set_scale(1, 1);
 			
 			// Tamanho base do botão
-			node_set_size(142,48);
+			node_set_size(142 + 25,48);
 			
 			// Adicionando texto
 			node_add_text($"{language_get_localized_text("ingame_level")} {global.level_index}", "interface_14", #ffffff, true);
