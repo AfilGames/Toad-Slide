@@ -37,5 +37,5 @@
   "tags":[
     "Level Creation",
   ],
-  "visible":true,
+  "visible":false,
 }
