@@ -1,5 +1,5 @@
 #macro CURRENT_PATCH 1
-#macro CHEAT true
+#macro CHEAT false
 #macro IS_MS_STORE false
 #macro MS:IS_MS_STORE true
 
