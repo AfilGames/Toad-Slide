@@ -711,84 +711,95 @@ with (credits_menu)
 			set_default_anim_scale(NODE_MOTION_STATE.LEAVE, EASING_CURVES.SINE_IN, 0, .15, 0);
 		}
 		
-		var _title = ui_credit_title("credit_studio", "credits_studio");
+		var _title = new node_button("credit_title", false);
 		with(_title)
 		{
-			node_set_size(42 * 7, 51 * 1);
-			node_text_set_box(42 * 7, 51 * 1.75);
-			
+			node_set_size(42 * 7, 51 * .9);
+			node_text_set_box(42 * 7, 51 * 1.5);
+	
 			node_add_sprite(spr_ui_credits_dark);
-			node_sprite_set_scale(1, 1);
-			node_add_text(game_display_name, "interface_18", 0, true);						
-		}
-				
-		var _studio = ui_credit_title("credit_studio", "credits_studio"),
-			_director = ui_credit_title("credit_director", "credits_director"),
-			_producer = ui_credit_title("credit_producer", "credits_producer"),
-			_lead_producer = ui_credit_title("credit_lead_producer", "credits_lead_producer"),
-			_gd = ui_credit_title("credit_manager", "credits_game_designer"),
-			_programmer = ui_credit_title("credit_manager", "credits_programmer"),
-			_pixel = ui_credit_title("credit_manager", "credits_pixel_artist"),
-			_qa = ui_credit_title("credit_manager", "credits_qa_test"),
-			_publisher_manager = ui_credit_title("credit_manager", "credits_publisher_manager"),
-			_sound = ui_credit_title("credit_manager", "credits_sound"),
-			_artist2d = ui_credit_title("credit_manager", "credits_2d_artist"),
-			_marketing = ui_credit_title("credit_manager", "credits_marketing"),
-			_marketing_manager = ui_credit_title("credit_manager", "credits_marketing_manager"),
-			_porting = ui_credit_title("credit_manager", "credits_porting"),
-			_porting_producer = ui_credit_title("credit_manager", "credits_porting_producer")
+			node_add_text("Toad Slide", "interface_18", c_white, true);						
+		}					
+
+		var _studio				= ui_credit_title("credit_studio"	, "A game by"),
+			_manager			= ui_credit_title("credit_manager"	, "Ceo and Creative Director"),
+			_lead_producer		= ui_credit_title("credit_producer", "Lead Producer"),
+			_game_producer		= ui_credit_title("credit_producer", "Game Producer"),
+			_gd					= ui_credit_title("credit_manager"	, "Game Designer"),
+			_gd_system			= ui_credit_title("credit_manager"	, "System Designer"),
+			_programmer			= ui_credit_title("credit_manager"	, "Programmer"),
+			_sysprogrammer		= ui_credit_title("credit_manager"	, "System Programmer"),
+			_lead_pixel			= ui_credit_title("credit_manager"	, "Lead Pixel Artist"),
+			_pixel				= ui_credit_title("credit_manager"	, "Pixel Artist"),
+			_qa					= ui_credit_title("credit_manager"	, "Quality Assurance"),
+			_sound				= ui_credit_title("credit_manager"	, "Composer and Sound Designer"),
+			_artist2d			= ui_credit_title("credit_manager"	, "2D Artist"),
+			_marketing			= ui_credit_title("credit_manager"	, "Marketing"),
+			_publishing			= ui_credit_title("credit_manager"	, "Publishing"),
+			_porting			= ui_credit_title("credit_manager"	, "Porting Programmers"),
+			_porting_producer	= ui_credit_title("credit_manager"	, "Porting Producer");
 			
-		var _afil = ui_credit_name("credit_afil", "Afil Games"),
+		var
+			_afil = ui_credit_name("credit_afil", "Afil Games"),
 			_antonio = ui_credit_name("credit_afil", "Antonio Filipe"),
-			_ayrton = ui_credit_name("credit_afil", "Ayrton Costa"),
-			_belarmino = ui_credit_name("credit_afil", "Victor de Oliveira Belarmino"),
-			_evandro = ui_credit_name("credit_afil", "Evandro Junior"),
-			_pernas = ui_credit_name("credit_afil", "Bernardo Sarto de Lucena"),
-			_andre = ui_credit_name("credit_afil", "André Luna"),
+			//sons,
+			_giullia = ui_credit_name("credit_afil", "Giullia \"Alrose\" Alves"),
+			//prog,
 			_neko = ui_credit_name("credit_afil", "Lucas Estevão"),
+			//pixel artista,
+
+			_ivan = ui_credit_name("credit_afil", "Ivan \"IvanGogh\" Neto"),
 			_carol = ui_credit_name("credit_afil", "Carolina Sayuri"),
-			_chico = ui_credit_name("credit_afil", "Mateus (Chico) Paulino"),
+			//GD,
+			_pernas = ui_credit_name("credit_afil", "Bernardo Sarto de Lucena"),
+			//producer,
+			_ayrton = ui_credit_name("credit_afil", "Ayrton Costa"),
+			_victor = ui_credit_name("credit_afil", "Victor Oliveira Belarmino"),
+			//marketing,
+			_gustavo = ui_credit_name("credit_afil", "Gustavo Souza"),
+			_pamela = ui_credit_name("credit_afil", "Pâmella Studzinski Sanchez"),
+			_tata = ui_credit_name("credit_afil", "Tauã Monteiro"),
+			//2D art,
 			_sayuri = ui_credit_name("credit_afil", "Sayuri Oshiyama"),
 			_caio = ui_credit_name("credit_afil", "Caio Galisa"),
-			_deekin = ui_credit_name("credit_afil", "Deekin"),
-			_ivan = ui_credit_name("credit_afil", "Ivan 'IvanGogh' Neto"),
-			_joaquim = ui_credit_name("credit_afil", "Joaquim Alberto"),
-			_patricia = ui_credit_name("credit_afil", "Patricia Lucas"),
-			_jose = ui_credit_name("credit_afil", "José Nilton Mendonça Junior"),
-			_rafa = ui_credit_name("credit_afil","Rafael Neres"),
-			_jovani = ui_credit_name("credit_afil", "Jovani Fracasso da Silva"),
-			_giullia = ui_credit_name("credit_afil", "Giullia (Alrose) Alves"),
-			_pamela = ui_credit_name("credit_afil", "Pâmella Sanchez"),
-			_rubs = ui_credit_name("credit_afil", "Rúbia Beray Armond"),
-			_guh = ui_credit_name("credit_afil", "Gustavo Souza"),
-			_mike = ui_credit_name("credit_afil", "Mike Oliveira"),
-			_luizalves = ui_credit_name("credit_afil", "Luiz Gustavo Alves"),
-			_vitorg = ui_credit_name("credit_afil", "Vitor George"),
+			//porting,
 			_fabiot = ui_credit_name("credit_afil", "Fabio Tiburcio"),
+			_vitorg = ui_credit_name("credit_afil", "Vitor George"),
 			_gabrielp = ui_credit_name("credit_afil", "Gabriel Paixão"),
+			_luizalves = ui_credit_name("credit_afil", "Luiz Gustavo Alves"),
 			_igormaia = ui_credit_name("credit_afil", "Igor Maia"),
-			_mneto = ui_credit_name("credit_afil", "Moisés Azevedo Neto");
+			_neto = ui_credit_name("credit_afil", "Moisés A. Neto"),
+			//pai porting,
+			_mike = ui_credit_name("credit_afil", "Mike \"Yuuzuru\" Oliveira"),
+			//QA,
+			_rafael = ui_credit_name("credit_afil", "Rafael Neres"),
+			_jose = ui_credit_name("credit_afil", "José Nilton Mendonça Junior"),
+			_joaquim = ui_credit_name("credit_afil", "Joaquim Alberto"),
+			//publishing,
+			_patricia = ui_credit_name("credit_afil", "Patricia Lucas");
 			
 		node_add(
 			_title,
-			_studio, _afil,
-			_director, _antonio,
-			_lead_producer, _ayrton,
-			_producer, _belarmino,
-			_gd, _andre,
-			_programmer, _neko,
-			_pixel, _ivan,
-			_sound, _giullia,	
-			_artist2d, _caio, _sayuri,
-			_marketing_manager, _rubs,
-			_marketing, _pamela, _guh,
-			_publisher_manager, _patricia,
-			_porting_producer, _mike,
-			_porting, _luizalves, _vitorg, _fabiot, _gabrielp, _igormaia, _mneto,
-			_qa, _joaquim, _jose, _rafa
+			_studio				,		_afil,
+			_manager              ,		_antonio,
+			_lead_producer        ,		_ayrton,
+			_game_producer        ,		_victor,
+			_gd                   ,		_pernas,
+			_programmer           ,		_neko,
+			_lead_pixel           ,		_carol,
+			_pixel                ,		_ivan,
+			_sound                ,		_giullia,
+			_publishing           ,		_patricia,
+
+			_marketing            ,		_gustavo, _pamela, _tata,
+			_artist2d             ,		_sayuri, _caio,
+			_porting_producer     ,		_mike,
+			_porting              ,		_fabiot, _vitorg, _gabrielp, _luizalves, _igormaia, _neto,
+			_qa                   ,		_rafael, _jose, _joaquim,
+
 		);
 	}
-		
+	
 	node_add(_credit_container, _button_container_bottom);
 	
 	__awake();
