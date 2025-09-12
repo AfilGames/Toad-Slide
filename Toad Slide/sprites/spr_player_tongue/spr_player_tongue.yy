@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_player_tongue",
   "bboxMode":0,
-  "bbox_bottom":12,
+  "bbox_bottom":9,
   "bbox_left":0,
   "bbox_right":15,
   "bbox_top":0,
