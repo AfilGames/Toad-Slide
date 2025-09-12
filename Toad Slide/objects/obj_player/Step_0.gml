@@ -47,6 +47,7 @@ if (!is_transitioning() and (grab_clock <= 0) and (eat_clock < 0)) {
 	else if !obj_main.is_dying() {
 		if (sprite_index != spr_player_happy) {
 			sprite_index = spr_player_happy;
+			image_speed = 1;
 			time_offset_celebration = current_time;
 		
 			if (global.game_data.level_unlock <= global.level_index) global.game_data.level_unlock = global.level_index + 1;
@@ -89,14 +90,12 @@ else if (grid_data.move_direction.y < 0) {
 	_idle_sprite = spr_player_idle_back;
 }
 
-if instance_exists(grab_object) {
-	_idle_sprite = spr_player_full_front;
-	if (grid_data.move_direction.x != 0) {
-		_idle_sprite = spr_player_full_side;
-	}
-	else if (grid_data.move_direction.y < 0) {
-		_idle_sprite = spr_player_full_back;
-	}
+var _full_sprite = spr_player_full_front;
+if (grid_data.move_direction.x != 0) {
+	_full_sprite = spr_player_full_side;
+}
+else if (grid_data.move_direction.y < 0) {
+	_full_sprite = spr_player_full_back;
 }
 
 var _spit_sprite = spr_player_spit_front;
@@ -115,45 +114,59 @@ else if (grid_data.move_direction.y < 0) {
 	_tongue_sprite = spr_player_tongue_back;
 }
 
-if !_tongue_out {
-	if (sprite_index == _tongue_sprite) {
-		sprite_index = _idle_sprite;
-		image_index = 0;
-		image_speed = 1;
-	}
+if !obj_main.is_winning() {
+	if !_tongue_out {
+		if (sprite_index == _tongue_sprite) {
+			sprite_index = _idle_sprite;
+			image_index = 0;
+			image_speed = 1;
+		}
 	
-	if (sprite_index != _idle_sprite) {
-		sprite_index = _idle_sprite;
-		image_index = 0;
-		image_speed = 1;
-	}
-	
-	if ((instance_exists(grab_object) and !move_while_grab) or is_aiming()) {
-		sprite_index = _spit_sprite;
-		image_index = 1;
-		image_speed = 0;
+		if (instance_exists(grab_object) and !move_while_grab and !is_aiming()) {
+			if (sprite_index != _full_sprite) {
+				sprite_index = _full_sprite;
+				image_index = 0;
+				image_speed = 1;
+			
+				if (grid_data.move_direction.x != 0) x_side = grid_data.move_direction.x;
+			}
+		}
+		else if is_aiming() {
+			if (sprite_index != _spit_sprite) {
+				sprite_index = _spit_sprite;
+				image_index = 1;
+				image_speed = 0;
+			}
+		
+			if (grid_data.move_direction.x != 0) x_side = grid_data.move_direction.x;
+		}
+		else {
+			image_speed = 1;
+		
+			if (sprite_index != _idle_sprite) {
+				sprite_index = _idle_sprite;
+				image_index = 0;
+			}
+		}
 
-		if (grid_data.move_direction.x != 0) x_side = grid_data.move_direction.x;
+		if ((sprite_index == _spit_sprite) and animation_has_ended()) {
+			sprite_index = _idle_sprite;
+			image_speed = 1;
+			image_index = 0;
+		}
 	}
 	else {
-		image_speed = 1;
-	}
-
-	if ((sprite_index == _spit_sprite) and animation_has_ended()) {
-		sprite_index = _idle_sprite;
-		image_speed = 1;
-		image_index = 0;
-	}
-}
-else {
-	if (sprite_index != _tongue_sprite) {
-		sprite_index = _tongue_sprite;
-		image_speed = 1;
-		image_index = 0;
-	}
-	else if animation_has_ended() {
-		image_speed = 0;
-		image_index = image_number - 1;
+		if (sprite_index != _tongue_sprite) {
+			sprite_index = _tongue_sprite;
+			image_speed = 1;
+			image_index = 0;
+		}
+		else if animation_has_ended() {
+			image_speed = 0;
+			image_index = image_number - 1;
+		}
+	
+		if (grid_data.move_direction.x != 0) x_side = grid_data.move_direction.x;
 	}
 }
 
